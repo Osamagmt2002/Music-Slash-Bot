@@ -123,8 +123,8 @@ client.distube
             .addField("**Status**", status(queue).toString())
             .setFooter({ text: `Requested by ${song.user.username}`, iconURL: song.user.avatarURL() })
             .setTimestamp()*/
-        queue.textChannel.reply("🔍Searching...")
-        queue.textChannel.editReply(`:notes: Added **${song.name}** (\`${song.formattedDuration}\`) to begin playing.`)
+       // queue.textChannel.reply("🔍Searching...")
+        queue.textChannel.reply(`:notes: Added **${song.name}** (\`${song.formattedDuration}\`) to begin playing.`)
     })
      /*.on("addSong", (queue, song) => {
         const embed = new MessageEmbed()

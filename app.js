@@ -111,8 +111,8 @@ client.distube = new Distube.default(client, {
 const status = (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode === 2 ? "All Queue" : "This Song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\` | Filter: \`${queue.filters.join(", ") || "Off"}\``
 // DisTube event listeners
 client.distube
-    /*.on("playSong", (queue, song) => {
-        const embed = new MessageEmbed()
+    .on("playSong", (queue, song) => {
+     /*   const embed = new MessageEmbed()
             .setColor("RANDOM")
             .setAuthor({ name: "Started Playing", iconURL: "https://raw.githubusercontent.com/HELLSNAKES/Music-Slash-Bot/main/assets/music.gif" })
             .setThumbnail(song.thumbnail)
@@ -123,8 +123,8 @@ client.distube
             .addField("**Status**", status(queue).toString())
             .setFooter({ text: `Requested by ${song.user.username}`, iconURL: song.user.avatarURL() })
             .setTimestamp()
-        queue.textChannel.send(`:notes: Added ${song.name} (${song.formattedDuration}) to begin playing.`)
-    })*/
+        queue.textChannel.send(`:notes: Added ${song.name} (${song.formattedDuration}) to begin playing.`)*/
+    })
      .on("addSong", (queue, song) => {
        /* const embed = new MessageEmbed()
             .setTitle(":ballot_box_with_check: | Added song to queue")

@@ -166,4 +166,27 @@ client.distube
         queue.volume = 50
     })
 keepalive()
+
+const { joinVoiceChannel } = require('@discordjs/voice'); client.on('ready', () => { 
+
+var channel = client.channels.cache.get('933298935647330320');
+
+let guild = client.guilds.cache.get("933298935647330314")
+
+if(!guild) return;
+
+    if (channel){
+
+ joinVoiceChannel({
+
+ channelId: channel.id,
+
+ guildId: guild.id,
+
+ adapterCreator: guild.voiceAdapterCreator }) 
+
+}
+
+}) 
+
 client.login(process.env.token)

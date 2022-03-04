@@ -22,6 +22,6 @@ module.exports = {
         await client.distube.stop(interaction)
         await interaction.reply("***Music stopped***")
         const message = await interaction.fetchReply()
-        await message.react("⏹")
+       
     }
 }

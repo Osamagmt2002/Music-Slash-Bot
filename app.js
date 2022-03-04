@@ -39,7 +39,7 @@ const rest = new REST({ version: "9" }).setToken(process.env.token);
 })
 client.on("ready", () => {
     console.log("\x1b[34m%s\x1b[0m", `Logged in as ${client.user.tag}!`)
-        client.user.setActivity(`/play`)
+        client.user.setActivity(`/p`)
 })
 /*
 client.on("messageCreate", async (message) => {
@@ -125,14 +125,14 @@ client.distube
             .setTimestamp()
         queue.textChannel.send(`:notes: Added ${song.name} (${song.formattedDuration}) to begin playing.`)*/
     })
-     .on("addSong", (queue, song) => {
-       /* const embed = new MessageEmbed()
+     /*.on("addSong", (queue, song) => {
+        const embed = new MessageEmbed()
             .setTitle(":ballot_box_with_check: | Added song to queue")
             .setDescription(`\`${song.name}\` - \`${song.formattedDuration}\` - Requested by ${song.user}`)
             .setColor("RANDOM")
-            .setTimestamp()*/
+            .setTimestamp()
         queue.textChannel.send(`:notes: Added **${sond.name}** (\`${song.formattedDuration}\`)to the queue`)
-    })
+    })*/
     .on("addList", (queue, playlist) => {
         const embed = new MessageEmbed()
             .setTitle(":ballot_box_with_check: | Add list")

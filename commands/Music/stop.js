@@ -7,9 +7,9 @@ module.exports = {
     run: async (interaction, client) => {
         const queue = await client.distube.getQueue(interaction)
         const voiceChannel = interaction.member.voice.channel
-        if (!voiceChannel) {
+      /*  if (!voiceChannel) {
             return interaction.reply({ content: "Please join a voice channel!", ephemeral: true })
-        }
+        }*/
         if (!queue) {
             const queueError = new Discord.MessageEmbed()
                 .setDescription("There is Nothing Playing")

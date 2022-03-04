@@ -14,7 +14,7 @@ module.exports = {
         const voiceChannel = interaction.member.voice.channel
         const queue = await client.distube.getQueue(interaction)
         const query = interaction.options.get("query").value
-      //  const song = queue.songs[0]
+        const song = queue.song
      /*   if (!voiceChannel) {
             return interaction.reply({ content: "Please join a voice channel!", ephemeral: true })
         }
@@ -24,7 +24,7 @@ module.exports = {
             }
         }*/
         await interaction.reply("🔍Searching...")
-        await interaction.editReply(`:notes: Added **${queue.name}** (\`${queue.formattedDuration}\`) to begin playing.`)
+        await interaction.editReply(`:notes: Added **${song.name}** (\`${queue.formattedDuration}\`) to begin playing.`)
         client.distube.play(voiceChannel, query, {
             textChannel: interaction.channel,
             member: interaction.member

@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 
 module.exports = {
-    name: "skip",
+    name: "s",
     description: "Skips the current song in the queue",
     timeout: 5000,
     run: async (interaction, client) => {

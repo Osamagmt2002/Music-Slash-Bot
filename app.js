@@ -124,7 +124,7 @@ client.distube
             .setFooter({ text: `Requested by ${song.user.username}`, iconURL: song.user.avatarURL() })
             .setTimestamp()*/
        // queue.textChannel.reply("🔍Searching...")
-        queue.textChannel.reply(`:notes: Added **${song.name}** (\`${song.formattedDuration}\`) to begin playing.`)
+        queue.textChannel.send(`:notes: Added **${song.name}** (\`${song.formattedDuration}\`) to begin playing.`)
     })
      /*.on("addSong", (queue, song) => {
         const embed = new MessageEmbed()

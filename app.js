@@ -131,7 +131,7 @@ client.distube
             .setDescription(`\`${song.name}\` - \`${song.formattedDuration}\` - Requested by ${song.user}`)
             .setColor("RANDOM")
             .setTimestamp()*/
-        queue.textChannel.send(`:notes: Added **${sond.name}** (/`${song.formattedDuration}/`)to the queue)
+        queue.textChannel.send(`:notes: Added **${sond.name}** (\`${song.formattedDuration}\`)to the queue)
     })
     .on("addList", (queue, playlist) => {
         const embed = new MessageEmbed()

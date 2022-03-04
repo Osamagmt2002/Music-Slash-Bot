@@ -31,7 +31,7 @@ module.exports = {
         }*/
         const volume = parseInt(args)
         if (volume < 1 || volume > 100) {
-            return interaction.reply({ content: "Please enter a valid number (between 1 and 200)", ephemeral: true })
+            return interaction.reply({ content: "Please enter a valid number (between 1 and 100)", ephemeral: true })
         }
         await client.distube.setVolume(interaction, volume)
         const total = 100

@@ -9,7 +9,7 @@ module.exports = {
         const voiceChannel = interaction.member.voice.channel
      /*   if (!voiceChannel) {
             return interaction.reply({ content: "Please join a voice channel!", ephemeral: true })
-        }*/
+        }
         if (!queue) {
             const queueError = new Discord.MessageEmbed()
                 .setDescription("There is Nothing Playing")
@@ -18,7 +18,7 @@ module.exports = {
         }
         if (interaction.member.guild.me.voice.channelId !== interaction.member.voice.channelId) {
             return interaction.reply({ content: "You are not on the same voice channel as me!", ephemeral: true })
-        }
+        }*/
         const q = queue.songs.map((song, i) => {
             return `${i === 0 ? "Playing:" : `${i}.`} ${song.name} - \`${song.formattedDuration}\``
         }).join("\n")

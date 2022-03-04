@@ -24,7 +24,7 @@ module.exports = {
             }
         }*/
         await interaction.reply("🔍Searching...")
-        await interaction.editReply(`:notes: Added **${song.name}** (\`${queue.formattedDuration}\`) to begin playing.`)
+        await interaction.editReply(`:notes: Added **${queue.name}** (\`${queue.formattedDuration}\`) to begin playing.`)
         client.distube.play(voiceChannel, query, {
             textChannel: interaction.channel,
             member: interaction.member

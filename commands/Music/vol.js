@@ -17,9 +17,9 @@ module.exports = {
         const args = interaction.options.getNumber("amount")
         const queue = await client.distube.getQueue(interaction)
         const voiceChannel = interaction.member.voice.channel
-        if (!voiceChannel) {
+      /*  if (!voiceChannel) {
             return interaction.reply({ content: "Please join a voice channel!", ephemeral: true })
-        }
+        }*/
         if (!queue) {
             const queueError = new Discord.MessageEmbed()
                 .setDescription("There is Nothing Playing")
@@ -30,14 +30,12 @@ module.exports = {
             return interaction.reply({ content: "You are not on the same voice channel as me!", ephemeral: true })
         }
         const volume = parseInt(args)
-        if (volume < 1 || volume > 200) {
+        if (volume < 1 || volume > 100) {
             return interaction.reply({ content: "Please enter a valid number (between 1 and 200)", ephemeral: true })
         }
         await client.distube.setVolume(interaction, volume)
-        const total = 200
+        const total = 100
         const current = volume
-        const bar = progressbar.splitBar(total, current, 27, "▬", "🔘")[0]
         await interaction.reply(`Set the new volume to ${volume}%.`)
-        await interaction.channel.send(bar)
     }
 }

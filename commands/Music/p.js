@@ -23,7 +23,7 @@ module.exports = {
                 return interaction.reply({ content: "You are not on the same voice channel as me!", ephemeral: true })
             }
         }*/
-        await interaction.reply(`:notes: Added **${song.name}** to begin playing.`)
+        await interaction.reply(`:notes: Added **${song.name}** (\`${song.formattedDuration}\`) to begin playing.`)
       //  await interaction.editReply("Searching done :ok_hand: ")
         client.distube.play(voiceChannel, query, {
             textChannel: interaction.channel,

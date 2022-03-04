@@ -22,9 +22,9 @@ module.exports = {
             if (interaction.member.guild.me.voice.channelId !== interaction.member.voice.channelId) {
                 return interaction.reply({ content: "You are not on the same voice channel as me!", ephemeral: true })
             }
-        }*/
+        }
         await interaction.reply("🔍Searching...")
-        await interaction.editReply(`:notes: Added **${song.name}** (\`${queue.formattedDuration}\`) to begin playing.`)
+        await interaction.editReply(`:notes: Added **${song.name}** (\`${queue.formattedDuration}\`) to begin playing.`)*/
         client.distube.play(voiceChannel, query, {
             textChannel: interaction.channel,
             member: interaction.member

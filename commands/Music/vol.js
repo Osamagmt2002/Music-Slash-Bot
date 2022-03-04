@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 const progressbar = require("string-progressbar")
 
 module.exports = {
-    name: "volume",
+    name: "vol",
     description: "Change the music player's volume.",
     options: [
         {

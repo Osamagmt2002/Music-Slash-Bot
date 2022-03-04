@@ -90,24 +90,7 @@ client.on("interactionCreate", async (interaction) => {
         }
     }
 })
-client.on("guildCreate", guild => {
-    const embed = new MessageEmbed()
-        .setTitle("I'm added to a new server")
-        .setThumbnail(client.user.displayAvatarURL())
-        .setDescription(`I'm added to ${guild.name} | ID ${guild.id}\n Server member: ${guild.memberCount}\nTotal server: ${client.guilds.cache.size}`)
-        .setTimestamp()
-    const logchannel = client.channels.cache.get(process.env.Channel_log)
-    logchannel.send({ embeds: [embed] })
-})
-client.on("guildDelete", guild => {
-    const embed = new MessageEmbed()
-        .setTitle("I'm left a new server")
-        .setThumbnail(client.user.displayAvatarURL())
-        .setDescription(`I'm left to ${guild.name} | ID ${guild.id}\n Server member: ${guild.memberCount}\nTotal server: ${client.guilds.cache.size}`)
-        .setTimestamp()
-    const logchannel = client.channels.cache.get(process.env.Channel_log)
-    logchannel.send({ embeds: [embed] })
-})
+
 // Distube
 const Distube = require("distube")
 const { SoundCloudPlugin } = require("@distube/soundcloud")
@@ -129,18 +112,18 @@ const status = (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeat
 // DisTube event listeners
 client.distube
     .on("playSong", (queue, song) => {
-        const embed = new MessageEmbed()
+       /* const embed = new MessageEmbed()
             .setColor("RANDOM")
             .setAuthor({ name: "Started Playing", iconURL: "https://raw.githubusercontent.com/HELLSNAKES/Music-Slash-Bot/main/assets/music.gif" })
             .setThumbnail(song.thumbnail)
             .setDescription(`[${song.name}](${song.url})`)
             .addField("**Views:**", song.views.toString(), true)
             .addField("**Like:**", song.likes.toString(), true)
-            .addField("**Duration:**", song.formattedDuration.toString(), true)
+            .addField("**Duration:**", , true)
             .addField("**Status**", status(queue).toString())
             .setFooter({ text: `Requested by ${song.user.username}`, iconURL: song.user.avatarURL() })
-            .setTimestamp()
-        queue.textChannel.send({ embeds: [embed] })
+            .setTimestamp()*/
+        queue.textChannel.send(`:notes: Added ${song.name} (${song.formattedDuration.toString}) to begin playing.`)
     })
     .on("addSong", (queue, song) => {
         const embed = new MessageEmbed()

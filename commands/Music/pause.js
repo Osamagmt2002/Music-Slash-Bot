@@ -23,7 +23,7 @@ module.exports = {
             await client.distube.pause(interaction)
             await interaction.reply("***Paused the current track***")
             const message = await interaction.fetchReply()
-            await message.react("⏸")
+            
         } catch {
             interaction.reply({ content: " The queue has been paused already", ephemeral: true })
         }

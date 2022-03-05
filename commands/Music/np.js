@@ -25,6 +25,6 @@ module.exports = {
             .setThumbnail(song.thumbnail)
             .setFooter({ text: `${song.user.username}`, iconURL: song.user.avatarURL() 
            return interaction.reply(`:notes: Now Playing`)
-        return interaction.channel.send({ embeds: [embed] })
+        await interaction.channel.send({ embeds: [embed] })
     }
 }

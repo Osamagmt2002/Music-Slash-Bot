@@ -24,6 +24,7 @@ module.exports = {
             .setDescription(`[${song.name}](${song.url}) \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\``)
             .setThumbnail(song.thumbnail)
             .setFooter({ text: `${song.user.username}`, iconURL: song.user.avatarURL() 
-        return interaction.reply(":notes: Now Playing "{ embeds: [embed] })
+        return interaction.reply(":notes: Now Playing")
+        return interaction.channel.send({ embeds: [embed] })
     }
 }

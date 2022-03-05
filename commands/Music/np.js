@@ -13,7 +13,7 @@ module.exports = {
         if (!queue) {
             const queueError = new Discord.MessageEmbed()
                 .setDescription("There is Nothing Playing")
-                .setColor("RANDOM")
+                //.setColor("RANDOM")
             return interaction.reply({ embeds: [queueError] })
         }
       /*  if (interaction.member.guild.me.voice.channelId !== interaction.member.voice.channelId) {
@@ -23,7 +23,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
             .setDescription(`:notes: **Now Playing** \n [${song.name}](${song.url}) \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\``)
             .setFooter({ text: `${song.user.username}`, iconURL: song.user.avatarURL() })
-            .setTimestamp()
+   
     return interaction.reply({ embeds: [embed] })
     }
 }

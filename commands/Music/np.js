@@ -20,10 +20,10 @@ module.exports = {
             return interaction.reply({ content: "You are not on the same voice channel as me!", ephemeral: true })
         }*/
         const song = queue.songs[0]
-      const embed = new Discord.MessageEmbed()
-            .setDescription(`:notes: **Now Playing**`, `\`[${queue.formattedCurrentTime}/${song.formattedDuration}]\``)
+    const embed = new Discord.MessageEmbed()
+            .setDescription(`:notes: **Now Playing**`, `[${song.name}](${song.url}) \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\``)
             .setFooter({ text: `${song.user.username}`, iconURL: song.user.avatarURL() })
             .setTimestamp()
-      return interaction.reply({ embeds: [embed] })
+    return interaction.reply({ embeds: [embed] })
     }
 }

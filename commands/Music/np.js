@@ -21,7 +21,7 @@ module.exports = {
         }*/
         const song = queue.songs[0]
     const embed = new Discord.MessageEmbed()
-            .setDescription(`:notes: **Now Playing**`, `[${song.name}](${song.url}) \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\``)
+            .setDescription(`:notes: **Now Playing** \n [${song.name}](${song.url}) \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\``)
             .setFooter({ text: `${song.user.username}`, iconURL: song.user.avatarURL() })
             .setTimestamp()
     return interaction.reply({ embeds: [embed] })

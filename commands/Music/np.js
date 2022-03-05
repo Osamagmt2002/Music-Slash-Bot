@@ -21,17 +21,9 @@ module.exports = {
         }*/
         const song = queue.songs[0]
         const embed = new Discord.MessageEmbed()
-            .setAuthor({ name: "Now Playing", iconURL: "https://raw.githubusercontent.com/HELLSNAKES/Music-Slash-Bot/main/assets/music.gif" })
-            .setDescription(`[${song.name}](${song.url})`)
-            .addField("**Views:**", song.views.toString(), true)
-            .addField("**Like:**", song.likes.toString(), true)
-            .addField("**Duration:**", `${queue.formattedCurrentTime} / ${song.formattedDuration}`)
-            .addField("**Link**", `[Download This Song](${song.streamURL})`)
-            .addField("**Status**", status(queue).toString())
+            .setDescription(`[${song.name}](${song.url}) \`[${queue.formattedCurrentTime}/${song.formattedDuration}]\``)
             .setThumbnail(song.thumbnail)
-            .setColor("RANDOM")
-            .setFooter({ text: `Requested by ${song.user.username}`, iconURL: song.user.avatarURL() })
-            .setTimestamp()
-        return interaction.reply({ embeds: [embed] })
+            .setFooter({ text: `${song.user.username}`, iconURL: song.user.avatarURL() 
+        return interaction.reply(":notes: Now Playing "{ embeds: [embed] })
     }
 }
